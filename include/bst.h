@@ -4,7 +4,7 @@
 
 template <typename T>
 class BST {
-public:
+ public:
     struct Node {
         T data;
         int count;
@@ -12,7 +12,7 @@ public:
         Node* left;
     };
 
-private:
+ private:
     Node* root;
     Node* addNode(Node* localRoot, T data) {
         if (localRoot == nullptr) {
@@ -98,7 +98,7 @@ private:
         return localRoot;
     }
 
-public:
+ public:
     BST() : root(nullptr) {}
     void add(T data) {
         root = addNode(root, data);
