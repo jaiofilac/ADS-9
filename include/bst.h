@@ -17,12 +17,12 @@ private:
     Node* addNode(Node* localRoot, T data) {
         if (localRoot == nullptr) {
             localRoot = new Node;
-            localRoot->value = data;
+            localRoot->data = data;
             localRoot->count = 1;
             localRoot->left = localRoot->right = nullptr;
-        } else if (localRoot->value.compare(data) > 0) {
+        } else if (localRoot->data.compare(data) > 0) {
             localRoot->left = addNode(localRoot->left, data);
-        } else if (localRoot->value.compare(data) < 0) {
+        } else if (localRoot->data.compare(data) < 0) {
             localRoot->right = addNode(localRoot->right, data);
         } else {
             localRoot->count++;
@@ -39,7 +39,7 @@ private:
         }
     }
     int searchNode(Node* localRoot, T data) {
-        int check = localRoot->value.compare(data);
+        int check = localRoot->data.compare(data);
         if (check == 0) {
             return localRoot->count;
         } else if (check > 0) {
